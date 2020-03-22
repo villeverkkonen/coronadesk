@@ -6,9 +6,30 @@
   .countryDiv {
     .countryElement {
       background-color: #383838;
-      width: 180px;
+      width: 25vw;
+      max-width: 200px;
+      min-width: 100px;
       padding: 10px;
       margin: 10px;
+
+      .countryElementHeader {
+        text-align: center;
+      }
+
+      .countryElementFieldRow {
+        font-size: 20px;
+        .countryElementFieldLabel {
+          float: left;
+        }
+        .countryElementFieldValue {
+          float: right;
+        }
+      }
+      .countryElementFieldRow:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
     }
   }
 }

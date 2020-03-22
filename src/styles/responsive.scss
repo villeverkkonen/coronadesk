@@ -2,7 +2,31 @@
   .countryListDiv {
     .countryDiv {
       .countryElement {
-        width: 100px;
+        .countryElementFieldRow {
+          .countryElementFieldValue {
+            clear: both;
+            display: block;
+          }
+          .countryElementFieldValue {
+            clear: both;
+            float: none !important;
+            display: block;
+          }
+        }
+        .countryElementFieldRow:after {
+          display: block;
+          clear: none;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .countryListDiv {
+    .countryDiv {
+      .countryElement {
+        width: 32vw;
       }
     }
   }

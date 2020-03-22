@@ -6,11 +6,31 @@ function Country(props) {
   return (
     <div className="countryDiv">
       <div className="countryElement" key={props.name}>
-        <h3>{props.name}</h3>
-        <p>Date: {lastStatistic["date"]}</p>
-        <p>Confirmed: {lastStatistic["confirmed"]}</p>
-        <p>Deaths: {lastStatistic["deaths"]}</p>
-        <p>Recovered: {lastStatistic["recovered"]}</p>
+        <h3 className="countryElementHeader">{props.name}</h3>
+        <p className="countryElementFieldRow">
+          <span className="countryElementFieldLabel">Date:</span>
+          <span className="countryElementFieldValue">
+            {lastStatistic["date"]}
+          </span>
+        </p>
+        <p className="countryElementFieldRow">
+          <span className="countryElementFieldLabel">Confirmed:</span>
+          <span className="countryElementFieldValue">
+            {lastStatistic["confirmed"]}
+          </span>
+        </p>
+        <p className="countryElementFieldRow">
+          <span className="countryElementFieldLabel">Deaths:</span>
+          <span className="countryElementFieldValue">
+            {lastStatistic["deaths"]}
+          </span>
+        </p>
+        <p className="countryElementFieldRow">
+          <span className="countryElementFieldLabel">Recovered:</span>
+          <span className="countryElementFieldValue">
+            {lastStatistic["recovered"]}
+          </span>
+        </p>
       </div>
     </div>
   )
