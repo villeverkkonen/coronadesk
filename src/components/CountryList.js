@@ -3,14 +3,12 @@ import Country from './Country'
 
 function CountryList(props) {
   return (
-    <div>
-      <div>
-        {Object.keys(props.countries).map(country => (
-          <div key={country}>
-            <Country name={country} statistics={props.countries[country]} />
-          </div>
-        ))}
-      </div>
+    <div className="countryListDiv">
+      {Object.keys(props.countries).map(country => (
+        <div key={country}>
+          <Country name={country} statistics={props.countries[country]} />
+        </div>
+      ))}
     </div>
   )
 }

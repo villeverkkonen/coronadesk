@@ -2,9 +2,8 @@ import React from 'react'
 
 function CountrySearch(props) {
   return (
-    <div>
-      <label htmlFor="countrySearch">Search</label>
-      <input type="text" id="countrySearch" onChange={props.handleSearchChange} />
+    <div className="countrySearchDiv">
+      <input type="text" id="countrySearchInput" onChange={props.handleSearchChange} placeHolder="Filter..." />
     </div>
   )
 }

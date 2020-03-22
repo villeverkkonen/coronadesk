@@ -13,7 +13,8 @@ class CoronaDesk extends Component {
   }
 
   componentDidMount() {
-    // Get statistics of COVID-19 for 
+    // Get statistics of COVID-19 for 166 countries
+    // Every country has 60 dates with following fields: date, confirmed, deaths, recovered
     fetch("https://pomber.github.io/covid19/timeseries.json")
     .then(response => response.json())
     .then(statistics => {
@@ -21,8 +22,9 @@ class CoronaDesk extends Component {
     })
   }
 
+  // Triggers when CountrySearch input changes, filter countries starting with keyword
   handleSearchChange() {
-    const keyword = document.getElementById('countrySearch').value
+    const keyword = document.getElementById('countrySearchInput').value
     const filteredStatistics = {}
     Object.keys(this.state.statistics).forEach(country => {
       if (country.toLowerCase().startsWith(keyword.toLowerCase())) {
@@ -34,8 +36,9 @@ class CoronaDesk extends Component {
 
   render() {
     return (
-      <div>
-        <h3>Countries</h3>
+      <div className="coronaDeskDiv">
+        <h1>Corona Desk</h1>
+        <h3>Corona statistics all over the world</h3>
         <CountrySearch handleSearchChange={this.handleSearchChange}/>
         {Object.keys(this.state.filteredStatistics).length > 0
           ? <CountryList countries={this.state.filteredStatistics} />

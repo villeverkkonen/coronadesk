@@ -3,7 +3,7 @@ import CoronaDesk from './components/CoronaDesk'
 
 function App() {
   return (
-    <div>
+    <div className="appDiv">
       <CoronaDesk />
     </div>
   );
