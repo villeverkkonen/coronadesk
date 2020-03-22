@@ -7,6 +7,7 @@
     .countryElement {
       background-color: #383838;
       box-shadow: inset 0 0 8px #4e4c4c, 0 0 16px #4e4c4c;
+      border-radius: 10px;
       width: 25vw;
       max-width: 200px;
       min-width: 100px;
@@ -43,6 +44,7 @@
     -moz-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1),
       0 0 16px rgba(0, 0, 0, 0.1);
     box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
     padding: 2px;
     background: rgba(255, 255, 255, 0.5);
     margin: 0 0 10px 0;

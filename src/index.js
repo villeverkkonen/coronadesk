@@ -1,13 +1,21 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import App from "./App"
+import { SimpleStateProvider } from "use-simple-state"
+import countryReducer from "./store/reducers/CountryReducer"
 import "./styles/app.scss"
 import "./styles/countrydesk.scss"
 import "./styles/responsive.scss"
 
+const initialState = {
+  statistics: {},
+  filteredStatistics: {},
+  filterInUse: false,
+}
+
 ReactDOM.render(
-  <React.StrictMode>
+  <SimpleStateProvider initialState={initialState} reducers={[countryReducer]}>
     <App />
-  </React.StrictMode>,
+  </SimpleStateProvider>,
   document.getElementById("root")
 )
