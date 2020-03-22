@@ -31,6 +31,9 @@ function Country(props) {
             {lastStatistic["recovered"]}
           </span>
         </p>
+        <div className="countryDivElementButtons">
+          <button className="btnStick">Stick</button>
+        </div>
       </div>
     </div>
   )
