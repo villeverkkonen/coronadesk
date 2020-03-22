@@ -6,15 +6,12 @@ import { addStatistics } from "./store/actions/CountryActions"
 function App() {
   const [state, dispatch] = useSimpleState()
 
-  const fetchStatistics = async () => {
+  useEffect(() => {
     fetch("https://pomber.github.io/covid19/timeseries.json")
       .then(response => response.json())
       .then(statistics => {
         dispatch(addStatistics({ statistics }))
       })
-  }
-  useEffect(() => {
-    fetchStatistics()
   }, [])
   return (
     <div className="appDiv">

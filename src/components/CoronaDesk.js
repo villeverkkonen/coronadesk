@@ -1,11 +1,8 @@
 import React from "react"
 import CountryList from "./CountryList"
 import CountrySearch from "./CountrySearch"
-import { useSimpleState } from "use-simple-state"
 
-const CoronaDesk = () => {
-  const [state, dispatch] = useSimpleState()
-
+export default function CoronaDesk() {
   return (
     <div className="coronaDeskDiv">
       <h1>Corona Desk</h1>
@@ -15,5 +12,3 @@ const CoronaDesk = () => {
     </div>
   )
 }
-
-export default CoronaDesk

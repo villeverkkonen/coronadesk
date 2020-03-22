@@ -10,6 +10,7 @@ import "./styles/responsive.scss"
 const initialState = {
   statistics: {},
   filteredStatistics: {},
+  stickyStatistics: {},
   filterInUse: false,
 }
 

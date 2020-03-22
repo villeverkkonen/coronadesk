@@ -5,7 +5,7 @@ import {
   switchFilterInUse,
 } from "../store/actions/CountryActions"
 
-function CountrySearch() {
+export default function CountrySearch() {
   const [state, dispatch] = useSimpleState()
 
   // Triggers when CountrySearch input changes, filter countries starting with keyword
@@ -37,5 +37,3 @@ function CountrySearch() {
     </div>
   )
 }
-
-export default CountrySearch
