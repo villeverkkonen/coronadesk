@@ -17,4 +17,18 @@ export const removeStickyStatistic = ({ stickyStatisticName }) => ({
   type: 'REMOVE_STICKY_STATISTIC',
   data: stickyStatisticName,
 })
-export const switchFilterInUse = () => ({ type: 'SWITCH_FILTER_IN_USE' })
+export const addModalStatistic = ({ modalStatistic, modalStatisticName }) => ({
+  type: 'ADD_MODAL_STATISTIC',
+  data: modalStatistic,
+  name: modalStatisticName,
+})
+export const removeModalStatistic = () => ({ type: 'REMOVE_MODAL_STATISTIC' })
+export const toggleFilterInUse = () => ({ type: 'TOGGLE_FILTER_IN_USE' })
+export const changeFilteredInput = ({ filteredInput }) => ({
+  type: 'CHANGE_FILTERED_INPUT',
+  data: filteredInput,
+})
+export const saveScrollState = ({ left, top }) => ({
+  type: 'SAVE_SCROLL_STATE',
+  data: [left, top],
+})

@@ -2,7 +2,8 @@ import React from 'react'
 import { useSimpleState } from 'use-simple-state'
 import {
   addFilteredStatistics,
-  switchFilterInUse,
+  toggleFilterInUse,
+  changeFilteredInput,
 } from '../store/actions/CountryActions'
 
 export default function CountrySearch() {
@@ -13,10 +14,12 @@ export default function CountrySearch() {
     const keyword = document.getElementById('countrySearchInput').value
 
     if (!state.filterInUse && keyword.length > 0) {
-      dispatch(switchFilterInUse())
+      dispatch(toggleFilterInUse())
     } else if (state.filterInUse && keyword.length === 0) {
-      dispatch(switchFilterInUse())
+      dispatch(toggleFilterInUse())
     }
+
+    dispatch(changeFilteredInput({ filteredInput: keyword }))
 
     const filteredStatistics = {}
     Object.keys(state.statistics).forEach(country => {
@@ -33,6 +36,7 @@ export default function CountrySearch() {
         id="countrySearchInput"
         onChange={handleSearchChange}
         placeholder="Filter..."
+        value={state.filteredInput}
       />
     </div>
   )

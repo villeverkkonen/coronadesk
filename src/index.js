@@ -6,12 +6,17 @@ import countryReducer from './store/reducers/CountryReducer'
 import './styles/app.scss'
 import './styles/countrydesk.scss'
 import './styles/responsive.scss'
+import './styles/modal.scss'
 
 const initialState = {
   statistics: {},
   filteredStatistics: {},
   stickyStatistics: {},
+  modalStatistic: {},
+  modalStatisticName: '',
   filterInUse: false,
+  filteredInput: '',
+  scrollState: [0, 0],
 }
 
 ReactDOM.render(

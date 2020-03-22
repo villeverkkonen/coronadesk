@@ -3,7 +3,10 @@ import { useSimpleState } from 'use-simple-state'
 import {
   addStickyStatistic,
   removeStickyStatistic,
+  addModalStatistic,
+  saveScrollState,
 } from '../store/actions/CountryActions'
+import { formatDate } from '../helpers/HelperFunctions'
 
 export default function Country(props) {
   const [sticky, toggleSticky] = useState(props.sticky)
@@ -18,8 +21,23 @@ export default function Country(props) {
     toggleSticky(!sticky)
   }
 
-  const handleClickDetails = () => {}
+  const handleClickDetails = () => {
+    // Save scroll state so user can continue from where was before opening modal
+    const doc = document.documentElement
+    const left = (window.pageXOffset || doc.scrollLeft) - (doc.clientLeft || 0)
+    const top = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0)
+    dispatch(saveScrollState({ left, top }))
+    dispatch(
+      addModalStatistic({
+        modalStatistic: props.statistic,
+        modalStatisticName: props.name,
+      })
+    )
+    // When opening modal scroll to top
+    window.scrollTo(0, 0)
+  }
 
+  // Get latest date, more dates at Details
   const lastStatistic = props.statistic.slice(-1)[0]
   const stickyBtnText = sticky ? 'Unstick' : 'Stick'
 
@@ -33,7 +51,7 @@ export default function Country(props) {
         <p className="countryElementFieldRow">
           <span className="countryElementFieldLabel">Date:</span>
           <span className="countryElementFieldValue">
-            {lastStatistic['date']}
+            {formatDate(lastStatistic['date'])}
           </span>
         </p>
         <p className="countryElementFieldRow">

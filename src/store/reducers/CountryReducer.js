@@ -4,7 +4,11 @@ import {
   REMOVE_FILTERED_STATISTICS,
   ADD_STICKY_STATISTIC,
   REMOVE_STICKY_STATISTIC,
-  SWITCH_FILTER_IN_USE,
+  TOGGLE_FILTER_IN_USE,
+  ADD_MODAL_STATISTIC,
+  REMOVE_MODAL_STATISTIC,
+  CHANGE_FILTERED_INPUT,
+  SAVE_SCROLL_STATE,
 } from '../constants/CountryConstants'
 
 export const countryReducer = (state, action) => {
@@ -22,8 +26,20 @@ export const countryReducer = (state, action) => {
     case REMOVE_STICKY_STATISTIC:
       delete stickyStatistics[action.data]
       return { ...state, stickyStatistics }
-    case SWITCH_FILTER_IN_USE:
+    case TOGGLE_FILTER_IN_USE:
       return { ...state, filterInUse: !state.filterInUse }
+    case ADD_MODAL_STATISTIC:
+      return {
+        ...state,
+        modalStatistic: action.data,
+        modalStatisticName: action.name,
+      }
+    case REMOVE_MODAL_STATISTIC:
+      return { ...state, modalStatistic: {} }
+    case CHANGE_FILTERED_INPUT:
+      return { ...state, filteredInput: action.data }
+    case SAVE_SCROLL_STATE:
+      return { ...state, scrollState: [action.data[0], action.data[1]] }
     default:
       return state
   }
