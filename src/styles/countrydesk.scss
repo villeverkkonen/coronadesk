@@ -37,6 +37,39 @@
         display: table;
         clear: both;
       }
+
+      .countryDivElementButtons {
+        .btnSticky,
+        .btnDetails {
+          background-color: rgba(255, 255, 255, 0.5);
+          color: #383838;
+          border: none;
+          font-size: 20px;
+          padding: 5px;
+          border-radius: 10%;
+        }
+
+        .btnDetails {
+          float: left;
+        }
+
+        .btnSticky {
+          float: right;
+        }
+
+        .btnSticky:hover,
+        .btnDetails:hover {
+          background-color: #383838;
+          color: rgba(255, 255, 255, 0.5);
+          cursor: pointer;
+        }
+      }
+
+      .countryDivElementButtons:after {
+        content: '';
+        display: table;
+        clear: both;
+      }
     }
   }
 }
@@ -56,19 +89,4 @@
     font-size: 24px;
     width: 250px;
   }
-}
-
-.btnSticky {
-  background-color: rgba(255, 255, 255, 0.5);
-  color: #383838;
-  border: none;
-  font-size: 20px;
-  padding: 5px;
-  border-radius: 10%;
-}
-
-.btnSticky:hover {
-  background-color: #383838;
-  color: rgba(255, 255, 255, 0.5);
-  cursor: pointer;
 }

@@ -18,6 +18,8 @@ export default function Country(props) {
     toggleSticky(!sticky)
   }
 
+  const handleClickDetails = () => {}
+
   const lastStatistic = props.statistic.slice(-1)[0]
   const stickyBtnText = sticky ? 'Unstick' : 'Stick'
 
@@ -53,6 +55,9 @@ export default function Country(props) {
           </span>
         </p>
         <div className="countryDivElementButtons">
+          <button className="btnDetails" onClick={handleClickDetails}>
+            Details
+          </button>
           <button className="btnSticky" onClick={handleToggleSticky}>
             {stickyBtnText}
           </button>

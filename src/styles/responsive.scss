@@ -5,15 +5,26 @@
         .countryElementFieldRow {
           .countryElementFieldValue {
             clear: both;
-            display: block;
-          }
-          .countryElementFieldValue {
-            clear: both;
             float: none !important;
             display: block;
           }
         }
         .countryElementFieldRow:after {
+          display: block;
+          clear: none;
+        }
+        .countryDivElementButtons {
+          .btnDetails {
+            float: none !important;
+          }
+          .btnSticky {
+            float: none !important;
+            display: block;
+            margin-top: 5px;
+          }
+        }
+
+        .countryDivElementButtons:after {
           display: block;
           clear: none;
         }
