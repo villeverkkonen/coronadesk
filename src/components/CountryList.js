@@ -1,5 +1,5 @@
-import React from 'react'
-import Country from './Country'
+import React from "react"
+import Country from "./Country"
 
 function CountryList(props) {
   return (

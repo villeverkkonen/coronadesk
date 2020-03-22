@@ -4,7 +4,6 @@
   flex-wrap: wrap;
 
   .countryDiv {
-
     .countryElement {
       background-color: #383838;
       width: 180px;
@@ -16,18 +15,14 @@
 
 .countrySearchDiv {
   #countrySearchInput {
-    border: 5px solid white; 
-    -webkit-box-shadow: 
-      inset 0 0 8px  rgba(0,0,0,0.1),
-            0 0 16px rgba(0,0,0,0.1); 
-    -moz-box-shadow: 
-      inset 0 0 8px  rgba(0,0,0,0.1),
-            0 0 16px rgba(0,0,0,0.1); 
-    box-shadow: 
-      inset 0 0 8px  rgba(0,0,0,0.1),
-            0 0 16px rgba(0,0,0,0.1); 
+    border: 5px solid white;
+    -webkit-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1),
+      0 0 16px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1),
+      0 0 16px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
     padding: 2px;
-    background: rgba(255,255,255,0.5);
+    background: rgba(255, 255, 255, 0.5);
     margin: 0 0 10px 0;
     font-size: 24px;
     width: 250px;
