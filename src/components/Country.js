@@ -1,9 +1,9 @@
-import React, { useState } from "react"
-import { useSimpleState } from "use-simple-state"
+import React, { useState } from 'react'
+import { useSimpleState } from 'use-simple-state'
 import {
   addStickyStatistic,
   removeStickyStatistic,
-} from "../store/actions/CountryActions"
+} from '../store/actions/CountryActions'
 
 export default function Country(props) {
   const [sticky, toggleSticky] = useState(props.sticky)
@@ -19,37 +19,37 @@ export default function Country(props) {
   }
 
   const lastStatistic = props.statistic.slice(-1)[0]
-  const stickyBtnText = sticky ? "Unstick" : "Stick"
+  const stickyBtnText = sticky ? 'Unstick' : 'Stick'
 
   return (
     <div className="countryDiv">
       <div
-        className={sticky ? "countryElement stickyElement" : "countryElement"}
+        className={sticky ? 'countryElement stickyElement' : 'countryElement'}
         key={props.name}
       >
         <h3 className="countryElementHeader">{props.name}</h3>
         <p className="countryElementFieldRow">
           <span className="countryElementFieldLabel">Date:</span>
           <span className="countryElementFieldValue">
-            {lastStatistic["date"]}
+            {lastStatistic['date']}
           </span>
         </p>
         <p className="countryElementFieldRow">
           <span className="countryElementFieldLabel">Confirmed:</span>
           <span className="countryElementFieldValue">
-            {lastStatistic["confirmed"]}
+            {lastStatistic['confirmed']}
           </span>
         </p>
         <p className="countryElementFieldRow">
           <span className="countryElementFieldLabel">Deaths:</span>
           <span className="countryElementFieldValue">
-            {lastStatistic["deaths"]}
+            {lastStatistic['deaths']}
           </span>
         </p>
         <p className="countryElementFieldRow">
           <span className="countryElementFieldLabel">Recovered:</span>
           <span className="countryElementFieldValue">
-            {lastStatistic["recovered"]}
+            {lastStatistic['recovered']}
           </span>
         </p>
         <div className="countryDivElementButtons">

@@ -5,7 +5,7 @@ import {
   ADD_STICKY_STATISTIC,
   REMOVE_STICKY_STATISTIC,
   SWITCH_FILTER_IN_USE,
-} from "../constants/CountryConstants"
+} from '../constants/CountryConstants'
 
 export const countryReducer = (state, action) => {
   const stickyStatistics = Object.assign(state.stickyStatistics)

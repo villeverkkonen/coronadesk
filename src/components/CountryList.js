@@ -1,6 +1,6 @@
-import React from "react"
-import Country from "./Country"
-import { useSimpleState } from "use-simple-state"
+import React from 'react'
+import Country from './Country'
+import { useSimpleState } from 'use-simple-state'
 
 export default function CountryList() {
   const [state] = useSimpleState()

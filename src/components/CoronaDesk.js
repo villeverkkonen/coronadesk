@@ -1,6 +1,6 @@
-import React from "react"
-import CountryList from "./CountryList"
-import CountrySearch from "./CountrySearch"
+import React from 'react'
+import CountryList from './CountryList'
+import CountrySearch from './CountrySearch'
 
 export default function CoronaDesk() {
   return (

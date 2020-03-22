@@ -1,16 +1,16 @@
-import React from "react"
-import { useSimpleState } from "use-simple-state"
+import React from 'react'
+import { useSimpleState } from 'use-simple-state'
 import {
   addFilteredStatistics,
   switchFilterInUse,
-} from "../store/actions/CountryActions"
+} from '../store/actions/CountryActions'
 
 export default function CountrySearch() {
   const [state, dispatch] = useSimpleState()
 
   // Triggers when CountrySearch input changes, filter countries starting with keyword
   const handleSearchChange = () => {
-    const keyword = document.getElementById("countrySearchInput").value
+    const keyword = document.getElementById('countrySearchInput').value
 
     if (!state.filterInUse && keyword.length > 0) {
       dispatch(switchFilterInUse())
