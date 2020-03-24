@@ -2,6 +2,7 @@
 
 ## Corona statistics all over the world
 
+### [App in Heroku](https://coronadesk.herokuapp.com/)
 
 Responsive mobile friendly singe page app for seeing info about Covid-19 virus for 166 countries.
 
@@ -14,8 +15,6 @@ Techonologies:
 - use-simple-state dependency free state manager using hooks
 
 Covid-19 statistics from: https://github.com/pomber/covid19
-
-### ![App in Heroku](https://coronadesk.herokuapp.com/)
 
 
 Filter countries, by default latest date info is shown. You can also make some countries sticky to stay even though filtering.
