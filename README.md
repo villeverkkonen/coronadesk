@@ -13,6 +13,7 @@ In 'Details' you can see info for last 60 days for selected country.
 Techonologies:
 - React
 - use-simple-state dependency free state manager using hooks
+- Simple Node Express server
 
 Covid-19 statistics from: https://github.com/pomber/covid19
 
