@@ -20,7 +20,7 @@ export default function CountryModal() {
       <h3 className="countryElementHeader">{state.modalStatisticName}</h3>
 
       <div className="countryListDiv">
-        {state.modalStatistic.reverse().map(stat => (
+        {state.modalStatistic.map(stat => (
           <div className="countryDiv" key={stat['date']}>
             <div className="countryElement">
               <p className="countryElementFieldRow">

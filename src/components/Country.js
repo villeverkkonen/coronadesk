@@ -27,10 +27,12 @@ export default function Country(props) {
     const left = (window.pageXOffset || doc.scrollLeft) - (doc.clientLeft || 0)
     const top = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0)
     dispatch(saveScrollState({ left, top }))
+    const statistic = Object.assign(props.statistic)
+    const name = Object.assign(props.name)
     dispatch(
       addModalStatistic({
-        modalStatistic: props.statistic,
-        modalStatisticName: props.name,
+        modalStatistic: statistic,
+        modalStatisticName: name,
       })
     )
     // When opening modal scroll to top
@@ -38,7 +40,7 @@ export default function Country(props) {
   }
 
   // Get latest date, more dates at Details
-  const lastStatistic = props.statistic.slice(-1)[0]
+  const lastStatistic = Object.assign(props.statistic[0])
   const stickyBtnText = sticky ? 'Unstick' : 'Stick'
 
   return (

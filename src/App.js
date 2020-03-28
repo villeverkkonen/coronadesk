@@ -11,6 +11,9 @@ function App() {
     await fetch('https://pomber.github.io/covid19/timeseries.json')
       .then(response => response.json())
       .then(statistics => {
+        Object.keys(statistics).map(stat => {
+          return statistics[stat].reverse()
+        })
         dispatch(addStatistics({ statistics }))
       })
   }
