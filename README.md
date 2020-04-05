@@ -10,6 +10,8 @@ You can filter countries and make countries sticky so thay stay visible even tho
 
 In 'Details' you can see info for last 60 days for selected country.
 
+From upper right corner you can switch between dark and light mode.
+
 Techonologies:
 - React
 - use-simple-state dependency free state manager using hooks
@@ -28,6 +30,6 @@ Clicking details you can view all dates for specific country
 ![details](https://github.com/villeverkkonen/coronadesk/blob/master/documentation/images/details.png)
 
 
-Mobile view
+Mobile view with light view
 
 ![mobile](https://github.com/villeverkkonen/coronadesk/blob/master/documentation/images/mobile.png)
