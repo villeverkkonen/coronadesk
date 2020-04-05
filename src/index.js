@@ -17,6 +17,7 @@ const initialState = {
   filterInUse: false,
   filteredInput: '',
   scrollState: [0, 0],
+  colorTheme: 'dark'
 }
 
 ReactDOM.render(

@@ -9,6 +9,7 @@ import {
   REMOVE_MODAL_STATISTIC,
   CHANGE_FILTERED_INPUT,
   SAVE_SCROLL_STATE,
+  TOGGLE_COLOR_THEME
 } from '../constants/CountryConstants'
 
 export const countryReducer = (state, action) => {
@@ -40,6 +41,8 @@ export const countryReducer = (state, action) => {
       return { ...state, filteredInput: action.data }
     case SAVE_SCROLL_STATE:
       return { ...state, scrollState: [action.data[0], action.data[1]] }
+    case TOGGLE_COLOR_THEME:
+      return { ...state, colorTheme: action.data }
     default:
       return state
   }

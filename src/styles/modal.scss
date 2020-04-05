@@ -1,12 +1,17 @@
 .modal {
   background-color: #252526;
+  width: 100%;
+
+  .countryElementHeader {
+    margin-left: 10px;
+  }
 
   .btnCloseModal {
     position: fixed;
     right: 0;
-    top: 0;
     color: red;
-    margin: 20px;
+    margin-top: 10px;
+    margin-right: 22px;
     font-size: 40px;
   }
 

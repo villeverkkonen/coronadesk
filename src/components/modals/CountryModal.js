@@ -2,6 +2,10 @@ import React from 'react'
 import { useSimpleState } from 'use-simple-state'
 import { removeModalStatistic } from '../../store/actions/CountryActions'
 import { formatDate } from '../../helpers/HelperFunctions'
+import {
+  colorThemeDarkStyle,
+  colorThemeLightStyle,
+} from '../../helpers/HelperVariables'
 
 export default function CountryModal() {
   const [state, dispatch] = useSimpleState()
@@ -13,36 +17,41 @@ export default function CountryModal() {
   }
 
   return (
-    <div className="modal">
+    <div
+      style={
+        state.colorTheme === 'dark' ? colorThemeDarkStyle : colorThemeLightStyle
+      }
+      className="modal"
+    >
       <div className="btnCloseModal" onClick={handleCloseModal}>
         X
       </div>
       <h3 className="countryElementHeader">{state.modalStatisticName}</h3>
 
       <div className="countryListDiv">
-        {state.modalStatistic.map(stat => (
+        {state.modalStatistic.map((stat) => (
           <div className="countryDiv" key={stat['date']}>
             <div className="countryElement">
               <p className="countryElementFieldRow">
-                <span className="countryElementFieldLabel">Date:</span>
+                <span className="countryElementFieldLabel" style={{color: state.colorTheme === 'dark' ? 'white' : 'black'}}>Date:</span>
                 <span className="countryElementFieldValue">
                   {formatDate(stat['date'])}
                 </span>
               </p>
               <p className="countryElementFieldRow">
-                <span className="countryElementFieldLabel">Confirmed:</span>
+                <span className="countryElementFieldLabel" style={{color: state.colorTheme === 'dark' ? 'white' : 'black'}}>Confirmed:</span>
                 <span className="countryElementFieldValue">
                   {stat['confirmed']}
                 </span>
               </p>
               <p className="countryElementFieldRow">
-                <span className="countryElementFieldLabel">Deaths:</span>
+                <span className="countryElementFieldLabel" style={{color: state.colorTheme === 'dark' ? 'white' : 'black'}}>Deaths:</span>
                 <span className="countryElementFieldValue">
                   {stat['deaths']}
                 </span>
               </p>
               <p className="countryElementFieldRow">
-                <span className="countryElementFieldLabel">Recovered:</span>
+                <span className="countryElementFieldLabel" style={{color: state.colorTheme === 'dark' ? 'white' : 'black'}}>Recovered:</span>
                 <span className="countryElementFieldValue">
                   {stat['recovered']}
                 </span>

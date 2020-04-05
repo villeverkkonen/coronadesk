@@ -7,6 +7,11 @@ import {
   saveScrollState,
 } from '../store/actions/CountryActions'
 import { formatDate } from '../helpers/HelperFunctions'
+import {
+  colorThemeDarkStyle,
+  colorThemeLightStyle,
+} from '../helpers/HelperVariables'
+import { findAllByLabelText } from '@testing-library/react'
 
 export default function Country(props) {
   const [sticky, toggleSticky] = useState(props.sticky)
@@ -46,30 +51,35 @@ export default function Country(props) {
   return (
     <div className="countryDiv">
       <div
+        style={
+          state.colorTheme === 'dark'
+            ? colorThemeDarkStyle
+            : colorThemeLightStyle
+        }
         className={sticky ? 'countryElement stickyElement' : 'countryElement'}
         key={props.name}
       >
         <h3 className="countryElementHeader">{props.name}</h3>
         <p className="countryElementFieldRow">
-          <span className="countryElementFieldLabel">Date:</span>
+          <span className="countryElementFieldLabel" style={{color: state.colorTheme === 'dark' ? 'white' : 'black'}}>Date:</span>
           <span className="countryElementFieldValue">
             {formatDate(lastStatistic['date'])}
           </span>
         </p>
         <p className="countryElementFieldRow">
-          <span className="countryElementFieldLabel">Confirmed:</span>
+          <span className="countryElementFieldLabel" style={{color: state.colorTheme === 'dark' ? 'white' : 'black'}}>Confirmed:</span>
           <span className="countryElementFieldValue">
             {lastStatistic['confirmed']}
           </span>
         </p>
         <p className="countryElementFieldRow">
-          <span className="countryElementFieldLabel">Deaths:</span>
+          <span className="countryElementFieldLabel" style={{color: state.colorTheme === 'dark' ? 'white' : 'black'}}>Deaths:</span>
           <span className="countryElementFieldValue">
             {lastStatistic['deaths']}
           </span>
         </p>
         <p className="countryElementFieldRow">
-          <span className="countryElementFieldLabel">Recovered:</span>
+          <span className="countryElementFieldLabel" style={{color: state.colorTheme === 'dark' ? 'white' : 'black'}}>Recovered:</span>
           <span className="countryElementFieldValue">
             {lastStatistic['recovered']}
           </span>
